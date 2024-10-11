@@ -1,101 +1,184 @@
+"use client";
+
 import Image from "next/image";
+import Icon from "./component/Icon";
+import Navbar from "./component/Navbar";
+import IconMiddle from "./component/IconMiddle";
+import SideBar from "./component/SideBar";
+import Account from "./component/Account";
+import Event from "./component/Event";
+import Card from "./component/Card";
+import iconku from "@/assets/logo_gtlive.svg";
+import icon2 from "@/assets/logo_gt7.svg";
+import gambar22 from "@/assets/i1JUTs1hkUxuv7c.jpg";
+import png from "@/assets/logo-gt.png";
+import gambar23 from "@/assets/i1I5PxBYMA3kgz.png";
+import gambar24 from "@/assets/icon-country-us.svg";
+import gambar2 from "@/assets/i1IkegzNFUf4fb.jpg";
+import CardEvent from "./component/CardEvent";
+import Fotter from "./component/Fotter";
+import second from "@/assets/logo-psn.svg";
+import threed from "@/assets/logo-ps.svg";
+import threeds from "@/assets/logo-pdi.svg";
+import Logo from "./component/Logo";
+import SliderImage from "./component/SliderImage";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <div>
+        <SideBar />
+        <Navbar />
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* Top Icons Section */}
+      <div className="flex justify-between p-2 mx-8">
+        <Icon />
+        <div className="flex gap-2 p-4">
+          <Account gambar={gambar24} />
+        </div>
+      </div>
+
+      {/* Middle Icon */}
+      <IconMiddle gambar={png} />
+
+      {/* Event Section */}
+      <div className="flex flex-wrap lg:flex-row justify-center gap-10 mt-4 border-b border-gray-500 ">
+        <Event tombol={icon2} />
+        <Event tombol={icon2} />
+        <Event tombol={icon2} />
+        <Event tombol={icon2} />
+      </div>
+
+      {/* Card Section */}
+      <div className="flex gap-10 m-10 p-10 flex-col lg:flex-row text-2xl md:text-lg">
+        <Card
+          card="World Series"
+          gambar={gambar2}
+          desc="The Gran Turismo World Series 2024 Special Page Now Open! Round 3 - Tokyo Event Streamed Live from the Venue on September 28!"
+        />
+        <Card
+          card="World Series"
+          gambar={gambar22}
+          desc="Earn up to 2,000,000 In-game Credits with the Gran Turismo World Series 2024 Round 3 Tokyo Predict the Winners Campaign!"
+        />
+      </div>
+
+      <div className="flex flex-row lg:flex-row justify-between p-10 gap-3 text-xl sm:group ">
+        <Card
+          card="World Series"
+          desc="Round 3 - Tokyo Driver Profiles"
+          gambar={gambar23}
+        />
+        <Card
+          card="World Series"
+          desc="Round 3 - Tokyo Driver Profiles"
+          gambar={gambar23}
+        />
+        <Card
+          card="World Series"
+          desc="Round 3 - Tokyo Driver Profiles"
+          gambar={gambar23}
+        />
+      </div>
+
+      {/* Card event */}
+      <div className="m-0 p-0 bg-[url('/images/line_white.png')] bg-cover bg-center bg-fixed w-full overflow-x-hidden overflow-y-hidden">
+        <div className="flex justify-center gap-2 p-10 sm:max-w-full">
+          <SliderImage gambarList={[gambar22, gambar23, gambar22, gambar23]} />
+        </div>
+
+        {/* Card Event 2 */}
+        <h1 className="font-bold text-2xl px-20 mt-4  text-left md:text-center">
+          Latest Information
+        </h1>
+        <div className=" lg:flex md:grid-cols-2  p-20 gap-4 text-xl flex-row lg:flex-row justify-between">
+          <a href="#">
+            <CardEvent
+              gambar={gambar23}
+              infor="Hallo"
+              describe="Win Two Race Cars With the Gran Turismo World Series 2024 Round 3 – Tokyo Viewers Gift"
             />
-            Deploy now
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="#">
+            <CardEvent
+              gambar={gambar23}
+              infor="Hallo"
+              describe="Win Two Race Cars With the Gran Turismo World Series 2024 Round 3 – Tokyo Viewers Gift"
+            />
+          </a>
+          <a href="#">
+            <CardEvent
+              gambar={gambar23}
+              infor="Hallo"
+              describe="Win Two Race Cars With the Gran Turismo World Series 2024 Round 3 – Tokyo Viewers Gift"
+            />
+          </a>
+          <a href="#">
+            <CardEvent
+              gambar={gambar23}
+              infor="Hallo"
+              describe="Win Two Race Cars With the Gran Turismo World Series 2024 Round 3 – Tokyo Viewers Gift"
+            />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* Content Card Event 2 */}
+      <div className="m-0 p-0 bg-[url('/images/line_Black.png')] bg-cover bg-center bg-fixed w-full overflow-x-hidden overflow-y-hidden">
+        <h1 className="font-bold text-2xl px-16 mt-4 inline-block text-left md:text-center">
+          Latest Information
+        </h1>
+        <div className=" lg:flex md:grid-cols-3 p-16 gap-4 md:max-w-full  text-xl">
+          <a href="#">
+            <CardEvent
+              gambar={gambar2}
+              infor="Hallo"
+              describe="Win Two Race Cars With the Gran Turismo World Series 2024 Round 3 – Tokyo Viewers Gift"
+            />
+          </a>
+          <a href="#">
+            <CardEvent
+              gambar={gambar2}
+              infor="Hallo"
+              describe="Win Two Race Cars With the Gran Turismo World Series 2024 Round 3 – Tokyo Viewers Gift"
+            />
+          </a>
+          <a href="#">
+            <CardEvent
+              gambar={gambar2}
+              infor="Hallo"
+              describe="Win Two Race Cars With the Gran Turismo World Series 2024 Round 3 – Tokyo Viewers Gift"
+            />
+          </a>
+        </div>
+
+        <div className="m-0 p-0 bg-[url('/images/line_Black.png')] bg-cover bg-center bg-fixed w-full overflow-x-hidden overflow-y-hidden">
+          <div className="p-20">
+            <Icon />
+            <button>Team of Services ~</button>
+            <button>Privacy Policy ~</button>
+            <div className="flex gap-4 mt-2 ">
+              <Fotter gambar={threed} />
+              <Fotter gambar={second} />
+            </div>
+            <div className="max-w-lg text-xs font-bold mt-4 lg:flex-col">
+              Manufacturers, cars, names, brands and associated imagery featured
+              in this game in some cases include trademarks and/or copyrighted
+              materials of their respective owners. All rights reserved. Any
+              depiction or recreation of real world locations, entities,
+              businesses, or organizations is not intended to be or imply any
+              sponsorship or endorsement of this game by such party or parties.
+              "Gran Turismo" logos are registered trademarks or trademarks of
+              Sony Interactive Entertainment Inc.
+            </div>
+            <div className="flex justify-end lg:flex-row">
+              <Logo gambar={threeds} />
+              <Logo gambar={iconku} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
